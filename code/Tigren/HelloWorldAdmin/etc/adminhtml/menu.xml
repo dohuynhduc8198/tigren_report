@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Tigren_HelloWorldAdmin::helloworld" title="Hospital" module="Tigren_HelloWorldAdmin" sortOrder="51" resource="Tigren_HelloWorldAdmin::helloworld"/>
+        <add id="Tigren_HelloWorldAdmin::post" title="Manage Hospital" module="Tigren_HelloWorldAdmin" sortOrder="10" action="adm/post" resource="Tigren_HelloWorldAdmin::post" parent="Tigren_HelloWorldAdmin::helloworld"/>
+        <add id="Tigren_HelloWorldAdmin::hello_configuration" title="Configuration" module="Tigren_HelloWorldAdmin" sortOrder="99" parent="Tigren_HelloWorldAdmin::helloworld" action="adminhtml/system_config/edit/section/hospital" resource="Tigren_HelloWorldAdmin::hospital_configuration"/>
+    </menu>
+</config>

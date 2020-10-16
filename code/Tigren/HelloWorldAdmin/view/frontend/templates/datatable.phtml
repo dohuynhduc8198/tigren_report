@@ -1,0 +1,43 @@
+<h1> Table Data from database tigren_hospital_post</h1>
+
+<style>
+    table {  font-family: arial, sans-serif;  border-collapse: collapse;  width: 100%;  margin-top: 30px;}
+    td, th {  border: 1px solid #dddddd;  text-align: left;  padding: 8px;  }
+    tr:nth-child(even) { background-color: #dddddd; }
+    .post-id{width:2%} .post-name{width:30%} .post-phone{width:30%}
+
+</style>
+<body>
+<?php
+$enable = $block->getEnable();
+if ($enable) {
+    echo "
+<table>
+    <tr>
+        <th style='width: 10%' class='post-id'>Id</th>
+        <th class='post-name'>Name</th>
+        <th class='post-phone'>Phone Number </th>
+        <th>Created At</th>
+    </tr>";
+}
+else{
+    echo "Data is not available";
+}
+    ?>
+    <?php
+    $enable = $block->getEnable();
+    if ($enable) {
+        foreach ($block->getPostCollection() as $key => $post) {
+            echo '<tr>
+                    <td>' . $post->getPostId() . '</td>
+                    <td>' . $post->getName() . '</td>
+                    <td>' . $post->getTelephone() . '</td>
+                    <td>' . $post->getCreatedAt() . '</td>
+                  </tr>';
+        }
+    }
+    ?>
+</table>
+
+</body>
+
