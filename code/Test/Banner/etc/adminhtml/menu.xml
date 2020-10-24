@@ -1,0 +1,12 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Test_Banner::banner" title="Banner Management" module="Test_Banner" sortOrder="20"
+             resource="Test_Banner::banner"/>
+        <add id="Test_Banner::banner_block" title="Block List" module="Test_Banner" sortOrder="1"
+             parent="Test_Banner::banner" action="list/block/block" resource="Test_Banner::banner_block"/>
+        <add id="Test_Banner::banner_menu" title="Banner List" module="Test_Banner" sortOrder="1"
+             parent="Test_Banner::banner" action="list/banner/banner" resource="Test_Banner::banner_menu"/>
+        <!--        <add id="Test_Banner::banner_configuration" title="Configuration" module="Test_Banner" sortOrder="99" parent="Test_Banner::banner" action="adminhtml/system_config/edit/section/banner" resource="Test_Banner::banner_configuration"/>-->
+    </menu>
+</config>

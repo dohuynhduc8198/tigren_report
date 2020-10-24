@@ -1,0 +1,40 @@
+<?php
+
+namespace Test\Banner\Controller\Adminhtml;
+
+use Magento\Backend\App\Action;
+use Magento\Backend\App\Action\Context;
+use Magento\Framework\Registry;
+use Magento\Framework\View\Result\PageFactory;
+use Test\Banner\Model\BlockFactory;
+
+class Block extends Action
+{
+    protected $_coreRegistry;
+    protected $_resultPageFactory;
+    protected $_postsFactory;
+
+    public function __construct(
+        Context $context,
+        Registry $coreRegistry,
+        PageFactory $resultPageFactory,
+        BlockFactory $postsFactory
+    )
+    {
+        parent::__construct($context);
+        $this->_coreRegistry = $coreRegistry;
+        $this->_resultPageFactory = $resultPageFactory;
+        $this->_postsFactory = $postsFactory;
+
+    }
+
+    public function execute()
+    {
+
+    }
+
+    protected function _isAllowed()
+    {
+        return true;
+    }
+}

@@ -1,0 +1,115 @@
+<h1> Banner Manager</h1>
+<h2> Table Block Test Data</h2>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .block-id {
+        width: 2%
+    }
+
+    .block-name {
+        width: 30%
+    }
+
+</style>
+
+<table>
+    <tr>
+        <th class="block-id">Id</th>
+        <th class="block-name">Name</th>
+        <th>Position</th>
+        <th>Display type</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Sort</th>
+        <th>Status</th>
+    </tr>
+    <?php
+    foreach ($block->getBlockCollection() as $key => $block_admin) {
+        echo '<tr>
+                    <td>' . $block_admin->getBlockId() . '</td>
+                    <td>' . $block_admin->getName() . '</td>
+                    <td>' . $block_admin->getPosition() . '</td>
+                    <td>' . $block_admin->getDisplayType() . '</td>
+                    <td>' . $block_admin->getFrom() . '</td>
+                    <td>' . $block_admin->getTo() . '</td>
+                    <td>' . $block_admin->getSort() . '</td>
+                    <td>' . $block_admin->getStatus() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
+<h2>Table Banner Test Data</h2>
+<style>
+    table {
+        font-family: arial, sans-serif;
+        border-collapse: collapse;
+        width: 100%;
+        margin-top: 30px;
+    }
+
+    td, th {
+        border: 1px solid #dddddd;
+        text-align: left;
+        padding: 8px;
+    }
+
+    tr:nth-child(even) {
+        background-color: #dddddd;
+    }
+
+    .banner-id {
+        width: 2%
+    }
+
+    .banner-name {
+        width: 30%
+    }
+
+</style>
+
+<table>
+    <tr>
+        <th class="banner-id">Id</th>
+        <th class="banner-name">Name</th>
+        <th>Image</th>
+        <th>URL</th>
+        <th>From</th>
+        <th>To</th>
+        <th>Sort</th>
+        <th>Status</th>
+    </tr>
+    <?php
+    foreach ($block->getBannerCollection() as $key => $banner) {
+        echo '<tr>
+                    <td>' . $banner->getBannerId() . '</td>
+                    <td>' . $banner->getName() . '</td>
+                    <td>' . $banner->getImage() . '</td>
+                    <td>' . $banner->getUrl() . '</td>
+                    <td>' . $banner->getFrom() . '</td>
+                    <td>' . $banner->getTo() . '</td>
+                    <td>' . $banner->getSort() . '</td>
+                    <td>' . $banner->getStatus() . '</td>
+                  </tr>';
+    }
+    ?>
+</table>
+
+</body>
+</html>

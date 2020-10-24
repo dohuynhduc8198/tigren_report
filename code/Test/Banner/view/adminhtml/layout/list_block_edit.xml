@@ -1,0 +1,33 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" layout="admin-2columns-left"
+      xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="left">
+            <block class="Test\Banner\Block\Adminhtml\Block\Edit\Tabs"
+                   name="test_banner_block_grid_block.edit.tabs">
+                <block class="Test\Banner\Block\Adminhtml\Block\Edit\Tab\Blockinfo"
+                       name="list_block_edit_tab_blockinfo"/>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">main_section</argument>
+                    <argument name="block" xsi:type="string">list_block_edit_tab_blockinfo</argument>
+                </action>
+
+                <action method="addTab">
+                    <argument name="name" xsi:type="string">attachment_banner</argument>
+                    <argument name="block" xsi:type="array">
+                        <item name="label" xsi:type="string">Select Banner</item>
+                        <item name="title" xsi:type="string">Select Banner</item>
+                        <item name="url" xsi:type="helper"
+                              helper="Test\Banner\Helper\Datablock::getBannerGridUrl"></item>
+                        <item name="class" xsi:type="string">ajax</item>
+                    </argument>
+                </action>
+
+            </block>
+        </referenceContainer>
+        <referenceContainer name="content">
+            <block class="Test\Banner\Block\Adminhtml\Banner\Edit"
+                   name="test_banner_block_grid_banner.edit"/>
+        </referenceContainer>
+    </body>
+</page>

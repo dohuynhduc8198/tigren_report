@@ -1,0 +1,17 @@
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceContainer name="div.sidebar.main">
+            <block class="Test\Banner\Block\Index" name="list.sidebar.main.top" before="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">sidebar-main-top</argument>
+                </action>
+            </block>
+            <block class="Test\Banner\Block\Index" name="list.sidebar.main.bottom" after="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">sidebar-main-bottom</argument>
+                </action>
+            </block>
+        </referenceContainer>
+    </body>
+</page>
