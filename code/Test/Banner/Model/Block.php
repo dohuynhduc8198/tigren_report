@@ -10,6 +10,9 @@ class Block extends AbstractModel implements IdentityInterface
     const CACHE_TAG = 'test_banner_block';
     protected $_cacheTag = 'test_banner_block';
     protected $_eventPrefix = 'test_banner_block';
+    //const for getStatus
+    const STATUS_ENABLED = 1;
+    const STATUS_DISABLED = 0;
 
     protected function _construct()
     {
@@ -40,5 +43,10 @@ class Block extends AbstractModel implements IdentityInterface
                 (int)$object->getId()
             );
         return $this->getResource()->getConnection()->fetchCol($select);
+    }
+
+    public function getStatus()
+    {
+        return [self::STATUS_ENABLED => __('Enable'), self::STATUS_DISABLED => __('Disable')];
     }
 }

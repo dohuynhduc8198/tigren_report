@@ -6,8 +6,8 @@ use Magento\Framework\Option\ArrayInterface;
 
 class Status implements ArrayInterface
 {
-    const ENABLED = 2;
-    const DISABLED = 1;
+    const ENABLED = 1;
+    const DISABLED = 0;
 
     /**
      * @return array
@@ -15,8 +15,8 @@ class Status implements ArrayInterface
     public function toOptionArray()
     {
         $options = [
-            self::ENABLED => __('1.Enabled'),
-            self::DISABLED => __('2.Disabled'),
+            self::ENABLED => __('Enable'),
+            self::DISABLED => __('Disable'),
         ];
         return $options;
     }

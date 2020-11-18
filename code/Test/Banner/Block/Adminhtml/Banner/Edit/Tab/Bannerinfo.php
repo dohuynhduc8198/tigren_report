@@ -96,7 +96,7 @@ class Bannerinfo extends Generic implements TabInterface
                 'name' => 'image',
                 'label' => __('Image'),
                 'title' => __('Image'),
-                'required' => true,
+                'required' => false,
                 'after_element_html' => $this->getImageHtml('image', $model->getBannerImage())
             ]
         );

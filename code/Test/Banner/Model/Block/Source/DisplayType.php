@@ -4,11 +4,7 @@ namespace Test\Banner\Model\Block\Source;
 
 use Magento\Framework\Data\OptionSourceInterface;
 
-/**
- * Class DisplayType
- *
- * @package Tigren\Bannermanager\Model\Block\Source
- */
+
 class DisplayType implements OptionSourceInterface
 {
     /**

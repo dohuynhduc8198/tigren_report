@@ -26,8 +26,8 @@
             </block>
         </referenceContainer>
         <referenceContainer name="content">
-            <block class="Test\Banner\Block\Adminhtml\Banner\Edit"
-                   name="test_banner_block_grid_banner.edit"/>
+            <block class="Test\Banner\Block\Adminhtml\Block\Edit"
+                   name="test_banner_block_grid_block.edit"/>
         </referenceContainer>
     </body>
 </page>

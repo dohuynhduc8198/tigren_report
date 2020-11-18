@@ -38,7 +38,7 @@ class Edit extends Container
      */
     protected function _construct()
     {
-        $this->_objectId = 'id';
+        $this->_objectId = 'block_id';
         $this->_controller = 'adminhtml_block';
         $this->_blockGroup = 'Test_Banner';
 
@@ -61,16 +61,16 @@ class Edit extends Container
             ],
             -100
         );
-        $this->buttonList->update('delete', 'label', __('Delete'));
+        $this->removeButton('back');
+        $this->removeButton('delete');
         $this->addButton(
-            'custom_back_button',
+            'custom_back_button_block',
             [
                 'label' => __('Back'),
                 'onclick' => 'setLocation(\'' . $this->getUrl('list/block/block') . '\')',
                 'class' => 'back'
             ]
         );
-        $this->removeButton('back');
     }
 
     /**

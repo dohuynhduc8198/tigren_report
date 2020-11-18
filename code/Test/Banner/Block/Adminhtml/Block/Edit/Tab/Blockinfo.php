@@ -150,9 +150,9 @@ class Blockinfo extends Generic implements TabInterface
             'select',
             [
                 'name' => 'status',
-                'label' => __(' Status'),
+                'label' => __('Status'),
                 'title' => __('Status'),
-                'options' => $this->_status->toOptionArray(),
+                'options' => ['1' => __('Enable'), '0' => __('Disable')],
                 'required' => true,
             ]
         );

@@ -14,4 +14,14 @@ class Collection extends AbstractCollection
     {
         $this->_init('Test\Banner\Model\Banner', 'Test\Banner\Model\ResourceModel\Banner');
     }
+
+    public function getBannerByBlock($blockId)
+    {
+        $this->getSelect()->join(
+            ['banner_block' => 'test_banner_id_block_banner'],
+            sprintf('banner_block.banner_id = main_table.banner_id AND banner_block.block_id = %s', $blockId)
+
+        );
+        return $this;
+    }
 }

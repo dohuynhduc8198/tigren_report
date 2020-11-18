@@ -2,13 +2,23 @@
 $htmlId = $block->getBannerItemHtmlId();
 $bannerCollection = $block->getBannerCollection();
 ?>
-<div class="test-banner all-image ">
+<div class="test-banner slider">
+    <script type="text/javascript">
+        require(['jquery', 'test/flexslider'], function ($) {
+            $(document).ready(function ($) {
+                var flexSliderSelector = '<?= $htmlId; ?>';
+                $('.' + flexSliderSelector).flexslider({
+                    animation: "slide"
+                });
+            });
+        });
+    </script>
     <div class="test-banner-slider">
         <div id="<?= $htmlId ?>" class="flexslider flexslider-content-image <?= $htmlId ?>"
              style="margin:auto">
             <ul class="slides">
                 <?php foreach ($bannerCollection as $banner): ?>
-                    <li class="all-image">
+                    <li>
                         <a href="<?= $banner->getUrl() ?>" >
                             <img alt="<?= $banner->getName() ?>"
                                  src="<?= $block->getBannerImageUrl($banner) ?>"

@@ -17,10 +17,8 @@
                 n.animating = !1, n.currentSlide = parseInt(n.vars.startAt ? n.vars.startAt : 0, 10), isNaN(n.currentSlide) && (n.currentSlide = 0), n.animatingTo = n.currentSlide, n.atEnd = 0 === n.currentSlide || n.currentSlide === n.last, n.containerSelector = n.vars.selector.substr(0, n.vars.selector.search(" ")), n.slides = $(n.vars.selector, n), n.container = $(n.containerSelector, n), n.count = n.slides.length, n.syncExists = $(n.vars.sync).length > 0, "slide" === n.vars.animation && (n.vars.animation = "swing"), n.prop = d ? "top" : "marginLeft", n.args = {}, n.manualPause = !1, n.stopped = !1, n.started = !1, n.startTimeout = null, n.transitions = !n.vars.video && !p && n.vars.useCSS && function () {
                     var e = document.createElement("div"),
                         t = ["perspectiveProperty", "WebkitPerspective", "MozPerspective", "OPerspective", "msPerspective"];
-                    for (var a in t) {
-                        if (void 0 !== e.style[t[a]]) {
-                            return n.pfx = t[a].replace("Perspective", "").toLowerCase(), n.prop = "-" + n.pfx + "-transform", !0;
-                        }
+                    for (var a in t) { if (void 0 !== e.style[t[a]]) { return n.pfx = t[a].replace("Perspective", "").toLowerCase(), n.prop = "-" + n.pfx + "-transform", !0;
+                    }
                     }
                     return !1
                 }(), n.ensureAnimationEnd = "", "" !== n.vars.controlsContainer && (n.controlsContainer = $(n.vars.controlsContainer).length > 0 && $(n.vars.controlsContainer)), "" !== n.vars.manualControls && (n.manualControls = $(n.vars.manualControls).length > 0 && $(n.vars.manualControls)), "" !== n.vars.customDirectionNav && (n.customDirectionNav = 2 === $(n.vars.customDirectionNav).length && $(n.vars.customDirectionNav)), n.vars.randomize && (n.slides.sort(
@@ -82,14 +80,13 @@
                     n.manualControls ? f.controlNav.setupManual() : f.controlNav.setupPaging()
                 }, setupPaging: function () {
                     var e = "thumbnails" === n.vars.controlNav ? "control-thumbs" : "control-paging", t = 1, a, s;
-                    if (n.controlNavScaffold = $('<ol class="' + i + "control-nav " + i + e + '"></ol>'), n.pagingCount > 1) {
-                        for (var r = 0; r < n.pagingCount; r++) {
-                            if (s = n.slides.eq(r), void 0 === s.attr("data-thumb-alt") && s.attr("data-thumb-alt", ""), altText = "" !== s.attr("data-thumb-alt") ? altText = ' alt="' + s.attr("data-thumb-alt") + '"' : "", a = "thumbnails" === n.vars.controlNav ? '<img src="' + s.attr("data-thumb") + '"' + altText + "/>" : '<a href="#">' + t + "</a>", "thumbnails" === n.vars.controlNav && !0 === n.vars.thumbCaptions) {
-                                var c = s.attr("data-thumbcaption");
-                                "" !== c && void 0 !== c && (a += '<span class="' + i + 'caption">' + c + "</span>")
-                            }
-                            n.controlNavScaffold.append("<li>" + a + "</li>"), t++
+                    if (n.controlNavScaffold = $('<ol class="' + i + "control-nav " + i + e + '"></ol>'), n.pagingCount > 1) { for (var r = 0; r < n.pagingCount; r++) {
+                        if (s = n.slides.eq(r), void 0 === s.attr("data-thumb-alt") && s.attr("data-thumb-alt", ""), altText = "" !== s.attr("data-thumb-alt") ? altText = ' alt="' + s.attr("data-thumb-alt") + '"' : "", a = "thumbnails" === n.vars.controlNav ? '<img src="' + s.attr("data-thumb") + '"' + altText + "/>" : '<a href="#">' + t + "</a>", "thumbnails" === n.vars.controlNav && !0 === n.vars.thumbCaptions) {
+                            var c = s.attr("data-thumbcaption");
+                            "" !== c && void 0 !== c && (a += '<span class="' + i + 'caption">' + c + "</span>")
                         }
+                        n.controlNavScaffold.append("<li>" + a + "</li>"), t++
+                    }
                     }
                     n.controlsContainer ? $(n.controlsContainer).append(n.controlNavScaffold) : n.append(n.controlNavScaffold), f.controlNav.set(), f.controlNav.active(), n.controlNavScaffold.delegate(
                         "a, img", o, function (e) {
@@ -144,11 +141,13 @@
                     "play" === e ? n.pausePlay.removeClass(i + "pause").addClass(i + "play").html(n.vars.playText) : n.pausePlay.removeClass(i + "play").addClass(i + "pause").html(n.vars.pauseText)
                 }
             }, touch: function () {
-                function e(e) {
+                function e(e)
+                {
                     e.stopPropagation(), n.animating ? e.preventDefault() : (n.pause(), t._gesture.addPointer(e.pointerId), T = 0, c = d ? n.h : n.w, f = Number(new Date), l = v && u && n.animatingTo === n.last ? 0 : v && u ? n.limit - (n.itemW + n.vars.itemMargin) * n.move * n.animatingTo : v && n.currentSlide === n.last ? n.limit : v ? (n.itemW + n.vars.itemMargin) * n.move * n.currentSlide : u ? (n.last - n.currentSlide + n.cloneOffset) * c : (n.currentSlide + n.cloneOffset) * c)
                 }
 
-                function a(e) {
+                function a(e)
+                {
                     e.stopPropagation();
                     var a = e.target._slider;
                     if (a) {
@@ -157,11 +156,12 @@
                             function () {
                                 t._gesture.stop()
                             }
-                        ) : void ((!x || Number(new Date) - f > 500) && (e.preventDefault(), !p && a.transitions && (a.vars.animationLoop || (m = T / (0 === a.currentSlide && 0 > T || a.currentSlide === a.last && T > 0 ? Math.abs(T) / c + 2 : 1)), a.setProps(l + m, "setTouch"))))
+                        ) : void((!x || Number(new Date) - f > 500) && (e.preventDefault(), !p && a.transitions && (a.vars.animationLoop || (m = T / (0 === a.currentSlide && 0 > T || a.currentSlide === a.last && T > 0 ? Math.abs(T) / c + 2 : 1)), a.setProps(l + m, "setTouch"))))
                     }
                 }
 
-                function i(e) {
+                function i(e)
+                {
                     e.stopPropagation();
                     var t = e.target._slider;
                     if (t) {
@@ -229,13 +229,10 @@
                     return e ? document[e] : !1
                 }, getHiddenProp: function () {
                     var e = ["webkit", "moz", "ms", "o"];
-                    if ("hidden" in document) {
-                        return "hidden";
+                    if ("hidden" in document) { return "hidden";
                     }
-                    for (var t = 0; t < e.length; t++) {
-                        if (e[t] + "Hidden" in document) {
-                            return e[t] + "Hidden";
-                        }
+                    for (var t = 0; t < e.length; t++) { if (e[t] + "Hidden" in document) { return e[t] + "Hidden";
+                    }
                     }
                     return null
                 }
@@ -250,24 +247,21 @@
             if (n.vars.animationLoop || e === n.currentSlide || (n.direction = e > n.currentSlide ? "next" : "prev"), m && 1 === n.pagingCount && (n.direction = n.currentItem < e ? "next" : "prev"), !n.animating && (n.canAdvance(e, o) || a) && n.is(":visible")) {
                 if (m && s) {
                     var l = $(n.vars.asNavFor).data("flexslider");
-                    if (n.atEnd = 0 === e || e === n.count - 1, l.flexAnimate(e, !0, !1, !0, o), n.direction = n.currentItem < e ? "next" : "prev", l.direction = n.direction, Math.ceil((e + 1) / n.visible) - 1 === n.currentSlide || 0 === e) {
-                        return n.currentItem = e, n.slides.removeClass(i + "active-slide").eq(e).addClass(i + "active-slide"), !1;
+                    if (n.atEnd = 0 === e || e === n.count - 1, l.flexAnimate(e, !0, !1, !0, o), n.direction = n.currentItem < e ? "next" : "prev", l.direction = n.direction, Math.ceil((e + 1) / n.visible) - 1 === n.currentSlide || 0 === e) { return n.currentItem = e, n.slides.removeClass(i + "active-slide").eq(e).addClass(i + "active-slide"), !1;
                     }
                     n.currentItem = e, n.slides.removeClass(i + "active-slide").eq(e).addClass(i + "active-slide"), e = Math.floor(e / n.visible)
                 }
-                if (n.animating = !0, n.animatingTo = e, t && n.pause(), n.vars.before(n), n.syncExists && !o && f.sync("animate"), n.vars.controlNav && f.controlNav.active(), v || n.slides.removeClass(i + "active-slide").eq(e).addClass(i + "active-slide"), n.atEnd = 0 === e || e === n.last, n.vars.directionNav && f.directionNav.update(), e === n.last && (n.vars.end(n), n.vars.animationLoop || n.pause()), p) {
-                    r ? (n.slides.eq(n.currentSlide).css(
-                        {
-                            opacity: 0,
-                            zIndex: 1
-                        }
-                    ), n.slides.eq(e).css(
-                        {
-                            opacity: 1,
-                            zIndex: 2
-                        }
-                    ), n.wrapup(c)) : (n.slides.eq(n.currentSlide).css({zIndex: 1}).animate({opacity: 0}, n.vars.animationSpeed, n.vars.easing), n.slides.eq(e).css({zIndex: 2}).animate({opacity: 1}, n.vars.animationSpeed, n.vars.easing, n.wrapup));
-                } else {
+                if (n.animating = !0, n.animatingTo = e, t && n.pause(), n.vars.before(n), n.syncExists && !o && f.sync("animate"), n.vars.controlNav && f.controlNav.active(), v || n.slides.removeClass(i + "active-slide").eq(e).addClass(i + "active-slide"), n.atEnd = 0 === e || e === n.last, n.vars.directionNav && f.directionNav.update(), e === n.last && (n.vars.end(n), n.vars.animationLoop || n.pause()), p) { r ? (n.slides.eq(n.currentSlide).css(
+                    {
+                        opacity: 0,
+                        zIndex: 1
+                    }
+                ), n.slides.eq(e).css(
+                    {
+                        opacity: 1,
+                        zIndex: 2
+                    }
+                ), n.wrapup(c)) : (n.slides.eq(n.currentSlide).css({zIndex: 1}).animate({opacity: 0}, n.vars.animationSpeed, n.vars.easing), n.slides.eq(e).css({zIndex: 2}).animate({opacity: 1}, n.vars.animationSpeed, n.vars.easing, n.wrapup)); } else {
                     var c = d ? n.slides.filter(":first").height() : n.computedW, g, h, S;
                     v ? (g = n.vars.itemMargin, S = (n.itemW + g) * n.move * n.animatingTo, h = S > n.limit && 1 !== n.visible ? n.limit : S) : h = 0 === n.currentSlide && e === n.count - 1 && n.vars.animationLoop && "next" !== n.direction ? u ? (n.count + n.cloneOffset) * c : 0 : n.currentSlide === n.last && 0 === e && n.vars.animationLoop && "prev" !== n.direction ? u ? 0 : (n.count + 1) * c : u ? (n.count - 1 - e + n.cloneOffset) * c : (e + n.cloneOffset) * c, n.setProps(h, "", n.vars.animationSpeed), n.transitions ? (n.vars.animationLoop && n.atEnd || (n.animating = !1, n.currentSlide = n.animatingTo), n.container.unbind("webkitTransitionEnd transitionend"), n.container.bind(
                         "webkitTransitionEnd transitionend", function () {
@@ -303,8 +297,7 @@
         }, n.setProps = function (e, t, a) {
             var i = function () {
                 var a = e ? e : (n.itemW + n.vars.itemMargin) * n.move * n.animatingTo, i = function () {
-                    if (v) {
-                        return "setTouch" === t ? e : u && n.animatingTo === n.last ? 0 : u ? n.limit - (n.itemW + n.vars.itemMargin) * n.move * n.animatingTo : n.animatingTo === n.last ? n.limit : a;
+                    if (v) { return "setTouch" === t ? e : u && n.animatingTo === n.last ? 0 : u ? n.limit - (n.itemW + n.vars.itemMargin) * n.move * n.animatingTo : n.animatingTo === n.last ? n.limit : a;
                     }
                     switch (t) {
                         case"setTotal":
@@ -323,35 +316,33 @@
             }();
             n.transitions && (i = d ? "translate3d(0," + i + ",0)" : "translate3d(" + i + ",0,0)", a = void 0 !== a ? a / 1e3 + "s" : "0s", n.container.css("-" + n.pfx + "-transition-duration", a), n.container.css("transition-duration", a)), n.args[n.prop] = i, (n.transitions || void 0 === a) && n.container.css(n.args), n.container.css("transform", i)
         }, n.setup = function (e) {
-            if (p) {
-                n.slides.css(
-                    {
-                        width: "100%",
-                        "float": "left",
-                        marginRight: "-100%",
-                        position: "relative"
-                    }
-                ), "init" === e && (r ? n.slides.css(
-                    {
-                        opacity: 0,
-                        display: "block",
-                        webkitTransition: "opacity " + n.vars.animationSpeed / 1e3 + "s ease",
-                        zIndex: 1
-                    }
-                ).eq(n.currentSlide).css({opacity: 1, zIndex: 2}) : 0 == n.vars.fadeFirstSlide ? n.slides.css(
-                    {
-                        opacity: 0,
-                        display: "block",
-                        zIndex: 1
-                    }
-                ).eq(n.currentSlide).css({zIndex: 2}).css({opacity: 1}) : n.slides.css(
-                    {
-                        opacity: 0,
-                        display: "block",
-                        zIndex: 1
-                    }
-                ).eq(n.currentSlide).css({zIndex: 2}).animate({opacity: 1}, n.vars.animationSpeed, n.vars.easing)), n.vars.smoothHeight && f.smoothHeight();
-            } else {
+            if (p) { n.slides.css(
+                {
+                    width: "100%",
+                    "float": "left",
+                    marginRight: "-100%",
+                    position: "relative"
+                }
+            ), "init" === e && (r ? n.slides.css(
+                {
+                    opacity: 0,
+                    display: "block",
+                    webkitTransition: "opacity " + n.vars.animationSpeed / 1e3 + "s ease",
+                    zIndex: 1
+                }
+            ).eq(n.currentSlide).css({opacity: 1, zIndex: 2}) : 0 == n.vars.fadeFirstSlide ? n.slides.css(
+                {
+                    opacity: 0,
+                    display: "block",
+                    zIndex: 1
+                }
+            ).eq(n.currentSlide).css({zIndex: 2}).css({opacity: 1}) : n.slides.css(
+                {
+                    opacity: 0,
+                    display: "block",
+                    zIndex: 1
+                }
+            ).eq(n.currentSlide).css({zIndex: 2}).animate({opacity: 1}, n.vars.animationSpeed, n.vars.easing)), n.vars.smoothHeight && f.smoothHeight(); } else {
                 var t, a;
                 "init" === e && (n.viewport = $('<div class="' + i + 'viewport"></div>').css(
                     {
@@ -455,13 +446,12 @@
         init: function () {
         }
     }, $.fn.flexslider = function (e) {
-        if (void 0 === e && (e = {}), "object" == typeof e) {
-            return this.each(
-                function () {
-                    var t = $(this), a = e.selector ? e.selector : ".slides > li", n = t.find(a);
-                    1 === n.length && e.allowOneSlide === !0 || 0 === n.length ? (n.fadeIn(400), e.start && e.start(t)) : void 0 === t.data("flexslider") && new $.flexslider(this, e)
-                }
-            );
+        if (void 0 === e && (e = {}), "object" == typeof e) { return this.each(
+            function () {
+                var t = $(this), a = e.selector ? e.selector : ".slides > li", n = t.find(a);
+                1 === n.length && e.allowOneSlide === !0 || 0 === n.length ? (n.fadeIn(400), e.start && e.start(t)) : void 0 === t.data("flexslider") && new $.flexslider(this, e)
+            }
+        );
         }
         var t = $(this).data("flexslider");
         switch (e) {

@@ -180,7 +180,7 @@ class Save extends Action
 
     public function saveBlock($model, $post)
     {
-        // Attach the attachments to contact
+        // Attach the attachments to banner
         if (isset($post['block'])) {
             $blockIds = $this->_jsHelper->decodeGridSerializedInput($post['block']);
             try {

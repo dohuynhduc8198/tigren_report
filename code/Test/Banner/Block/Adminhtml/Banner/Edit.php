@@ -62,16 +62,16 @@ class Edit extends Container
             -100
         );
         $this->removeButton('delete');
+        $this->removeButton('back');
+
         $this->addButton(
-            'custom_back_button',
+            'custom_back_button_banner',
             [
                 'label' => __('Back'),
                 'onclick' => 'setLocation(\'' . $this->getUrl('list/banner/banner') . '\')',
                 'class' => 'back'
-            ],
-            99
+            ]
         );
-        $this->removeButton('back');
     }
 
     /**

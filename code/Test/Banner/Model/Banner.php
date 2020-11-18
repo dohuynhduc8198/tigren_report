@@ -10,6 +10,9 @@ class Banner extends AbstractModel implements IdentityInterface
     const CACHE_TAG = 'test_banner_banner';
     protected $_cacheTag = 'test_banner_banner';
     protected $_eventPrefix = 'test_banner_banner';
+    //const for getStatus
+    const STATUS_ENABLED = 1;
+    const STATUS_DISABLED = 0;
 
     protected function _construct()
     {
@@ -45,5 +48,10 @@ class Banner extends AbstractModel implements IdentityInterface
     public function getBannerImage()
     {
         return $this->getImage();
+    }
+
+    public function getStatus()
+    {
+        return [self::STATUS_ENABLED => __('Enable'), self::STATUS_DISABLED => __('Disable')];
     }
 }

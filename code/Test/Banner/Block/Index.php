@@ -47,36 +47,4 @@ class  Index extends Template
         $banner_admin = $this->_bannerFactory->create();
         return $banner_admin->getCollection();
     }
-
-    public function setPosition($position)
-    {
-
-
-        $dateTimeNow = $this->_stdTimezone->date()->format('Y-m-d H:i:s');
-
-        $blockCollection = $this->_blockCollectionFactory->create()
-            ->addFieldToFilter('position', $position)
-            ->addFieldToFilter('from', [['to' => $dateTimeNow], ['from', 'null' => '']])
-            ->addFieldToFilter('to', [['gteq' => $dateTimeNow], ['to', 'null' => '']])
-            ->addFieldToFilter('status', 1);
-
-        $this->appendChildBlockBlocks($blockCollection);
-
-        return $this;
-    }
-
-    public function appendChildBlockBlocks(
-        Collection $blockCollection
-    )
-    {
-        foreach ($blockCollection as $block) {
-            $this->append(
-                $this->getLayout()->createBlock(
-                    'Test\Banner\Block\Banneritem'
-                )->setBlockId($block->getId())
-            );
-        }
-
-        return $this;
-    }
 }

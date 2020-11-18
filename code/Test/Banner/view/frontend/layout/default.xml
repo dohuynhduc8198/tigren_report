@@ -1,15 +1,60 @@
 <page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
       xsi:noNamespaceSchemaLocation="../../../../../../../lib/internal/Magento/Framework/View/Layout/etc/page_configuration.xsd">
     <body>
+        <!--Sidebar.main-->
         <referenceContainer name="div.sidebar.main">
-            <block class="Test\Banner\Block\Index" name="list.sidebar.main.top" before="-">
+            <block class="Test\Banner\Block\Banner" name="list.sidebar.main.top" before="-">
                 <action method="setPosition">
                     <argument name="position" xsi:type="string">sidebar-main-top</argument>
                 </action>
             </block>
-            <block class="Test\Banner\Block\Index" name="list.sidebar.main.bottom" after="-">
+            <block class="Test\Banner\Block\Banner" name="list.sidebar.main.bottom" after="-">
                 <action method="setPosition">
                     <argument name="position" xsi:type="string">sidebar-main-bottom</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <!--page.top-->
+        <referenceBlock name="page.top">
+            <block class="Test\Banner\Block\Banner" name="list.menu.top" before="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">menu-top</argument>
+                </action>
+            </block>
+        </referenceBlock>
+        <referenceBlock name="page.top">
+            <block class="Test\Banner\Block\Banner" name="list.menu.bottom" after="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">menu-bottom</argument>
+                </action>
+            </block>
+        </referenceBlock>
+        <!--sidebar.additional-->
+        <referenceContainer name="div.sidebar.additional">
+            <block class="Test\Banner\Block\Banner" name="list.sidebar.additional.top" before="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">sidebar-additional-top</argument>
+                </action>
+            </block>
+            <block class="Test\Banner\Block\Banner" name="list.sidebar.additional.bottom" after="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">sidebar-additional-bottom</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <!--page.bottom-->
+        <referenceContainer name="before.body.end">
+            <block class="Test\Banner\Block\Banner" name="list.page.bottom" after="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">page-bottom</argument>
+                </action>
+            </block>
+        </referenceContainer>
+        <!--content-top-->
+        <referenceContainer name="content.top">
+            <block class="Test\Banner\Block\Banner" name="list.content.top" before="-">
+                <action method="setPosition">
+                    <argument name="position" xsi:type="string">content-top</argument>
                 </action>
             </block>
         </referenceContainer>
